@@ -179,7 +179,7 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline {border-top: 1px solid black;}
 .hline + .vspace:last-child{display:none;}
 div.array {text-align:center;}
- :root { color-scheme: light; } html, body { background: white; color: black; } 
+ :root { color-scheme: light; } html, body { background: white; color: black; } img:not(.math) { max-width: 95%; height: auto; } 
 #TBL-1-1{border-right:1px solid black;}
 #TBL-5-1{border-right:1px solid black;}
 #TBL-9-1{border-right:1px solid black;}

@@ -65,7 +65,7 @@ convergence.
                                                                                                   
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/motivation-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='224' src='figs/motivation-.png' width='516' />                                               </div>
 <a id='x1-3r1'></a>
 <span class='ptmr7t-x-x-80'>Fig. 1.  (a) Cocktail party attack (CPA) is based on the insight that aggregate gradients from FC layers are linear combinations of its inputs. (b) CPA uses
 this insight to frame gradient inversion as a blind source separation problem and recovers the inputs from the gradients by optimizing an unmixing matrix </span><span class='mathjax-inline'>\(U\)
@@ -139,7 +139,7 @@ protocol or insert malicious weights <span class='cite'> [<a href='#Xcurious'>
                                                                                                   
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/fl_gm-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='269' src='figs/fl_gm-.png' width='516' />                                               </div>
 <a id='x1-8r2'></a>
 <span class='ptmr7t-x-x-80'>Fig. 2.  (a) FL aims to perform privacy preserving ML on distributed data by requiring the clients to perform training locally on their private data </span><span class='mathjax-inline'>\(X\) </span><span class='ptmr7t-x-x-80'>and send
 the weight updates/gradients </span><span class='mathjax-inline'>\(\nabla _\theta \mathcal L\) </span><span class='ptmr7t-x-x-80'>to a central server. (b) Gradient inversion attacks (GIA) break privacy by recovering the private data from the gradients. Prior
@@ -216,7 +216,7 @@ batch sizes.
 </p><!-- l. 1 --><p class='indent'>  </p><hr class='float' /><div class='float' id='the-microphone-recordings-in-the-cocktail-party-problem-and-the-gradients-from-a-fully-connected-layer-can-both-be-represented-as-linear-combination-of-inputs-recovering-the-inputs-in-both-cases-can-be-viewed-as-a-blind-source-separation-problem'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/cocktail_party-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='109' src='figs/cocktail_party-.png' width='516' />                                               </div>
 <a id='x1-17r3'></a>
 <span class='ptmr7t-x-x-80'>Fig. 3.  The microphone recordings in the cocktail party problem and the gradients from a fully connected layer can both be represented as linear combination
 of inputs. Recovering the inputs in both cases can be viewed as a blind source separation problem.</span>
@@ -315,7 +315,7 @@ through convolutional layers before being fed to a FC layer. However, we can use
     </dd><dt class='enumerate-enumitem'>
  2) </dt><dd class='enumerate-enumitem'>Use FIA to estimate the inputs from the embeddings.</dd></dl>
 <!-- l. 8 --><p class='noindent'>We describe these two steps in greater detail below.   </p><hr class='figure' /><div class='figure' id='we-attack-cnn-models-by-first-recovering-the-private-embedding-from-the-fc-layer-using-cpa-and-then-using-a-feature-inversion-attack-fia-to-recover-the-input-from-these-embeddings'>
-<div class='centerline'>                                                <img alt='PIC' height='464' src='figs/cpa_fi-.png' width='464' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='256' src='figs/cpa_fi-.png' width='464' />                                               </div>
 <a id='x1-34r4'></a>
 <span class='ptmr7t-x-x-80'>Fig. 4.  We attack CNN models by first recovering the private embedding from the FC layer using CPA and then using a feature inversion attack (FIA) to
 recover the input from these embeddings.</span>
@@ -348,7 +348,7 @@ optimization objective to estimate the unmixing matrix <span class='mathjax-inli
 <!-- l. 44 --></p><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-subset-of-images-recovered-from-gradient-matching-gm-and-cocktail-party-cp-attacks-by-inverting-the-gradients-from-the-fc2-network-with-a-batch-of-64-tinyimagenet-inputs-the-quality-of-images-recovered-by-cp-is-significantly-better-than-the-gm-attack-please-see-appendixref-appadditionalresults-for-additional-results'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/results_tiny_imagenet-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='122' src='figs/results_tiny_imagenet-.png' width='516' />                                               </div>
 <a id='x1-37r5'></a>
 <span class='ptmr7t-x-x-80'>Fig. 5.  Comparison of a subset of images recovered from gradient matching (GM) and cocktail party (CP) attacks by inverting the gradients from the FC-2
 network with a batch of 64 Tiny-ImageNet inputs. The quality of images recovered by CP is significantly better than the GM attack. Please see Appendix </span><a href='#x1-85r1'><span class='ptmr7t-x-x-80'>A</span><!-- tex4ht:ref: app:additional_results  --></a>
@@ -402,7 +402,7 @@ separate from the ones used to report our results.
 </p><!-- l. 12 --><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-subset-of-images-recovered-from-gradient-matching-gm-cocktail-party-feature-inversion-cpfi-and-cocktail-party-feature-inversion-gradient-matching-cpfigm-by-inverting-the-gradients-from-a-vgg16-network-with-a-batch-of-256-imagenet-inputs-cpfi-our-proposal-can-recover-more-images-compared-to-gm-prior-work-cpfigm-improves-the-quality-of-recovered-images-by-combining-the-benefits-of-our-proposal-and-prior-work-please-see-appendixref-appadditionalresults-for-additional-results'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/results_imagenet-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='163' src='figs/results_imagenet-.png' width='516' />                                               </div>
 <a id='x1-43r6'></a>
 <span class='ptmr7t-x-x-80'>Fig. 6.  Comparison of a subset of images recovered from gradient matching (GM), cocktail party + feature inversion (CP+FI) and cocktail party + feature
 inversion + gradient matching (CP+FI+GM) by inverting the gradients from a VGG-16 network with a batch of 256 ImageNet inputs. CP+FI (our proposal)
@@ -468,7 +468,7 @@ we make the following key observations from our results: </p>
     batch sizes.
 </li></ul>
 <hr class='figure' /><div class='figure' id='distribution-of-cosine-similarity-cs-values-computed-between-the-private-embeddings-z-and-the-embeddings-recovered-by-cpa-z-most-of-the-cs-values-are-close-to-the-ideal-value-of-1'>
-<div class='centerline'>                                                <img alt='PIC' height='412' src='figs/cs_imagenet-.png' width='412' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='223' src='figs/cs_imagenet-.png' width='412' />                                               </div>
 <a id='x1-50r7'></a>
 <span class='ptmr7t-x-x-80'>Fig. 7.  Distribution  of  cosine  similarity  (CS)  values  computed  between  the  private  embeddings  </span><span class='mathjax-inline'>\(z\)  </span><span class='ptmr7t-x-x-80'>and  the  embeddings  recovered  by  CPA  </span><span class='mathjax-inline'>\(\hat {z}\)</span><span class='ptmr7t-x-x-80'>.  Most  of  the  CS
 values are close to the ideal value of 1.</span></div><hr class='endfigure' />
@@ -721,7 +721,7 @@ attacks on Tiny-ImageNet and ImageNet.
 </p><!-- l. 43 --><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-random-subset-of-images-recovered-by-various-gradient-inversion-attacks-carried-out-using-the-gradients-from-fc2-with-a-batch-of-64-tinyimagenet-images-images-are-not-cherrypicked'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/tim1-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='374' src='figs/tim1-.png' width='516' />                                               </div>
 <a id='x1-86r8'></a>
 <span class='ptmr7t-x-x-80'>Fig. 8.  Comparison of a random subset of images recovered by various gradient inversion attacks carried out using the gradients from FC2 with a batch of
 64 Tiny-ImageNet images. Images are not cherry-picked.</span>
@@ -733,7 +733,7 @@ attacks on Tiny-ImageNet and ImageNet.
 <!-- l. 50 --><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-random-subset-of-images-recovered-by-various-gradient-inversion-attacks-carried-out-using-the-gradients-from-fc2-with-a-batch-of-64-tinyimagenet-images-images-are-not-cherrypicked1'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                 <img alt='PIC' height='516' src='figs/tim2-.png' width='516' />                                               </div>
+<div class='centerline'>                                                 <img alt='PIC' height='373' src='figs/tim2-.png' width='516' />                                               </div>
 <a id='x1-87r9'></a>
 <span class='ptmr7t-x-x-80'>Fig. 9.  Comparison of a random subset of images recovered by various gradient inversion attacks carried out using the gradients from FC2 with a batch of
 64 Tiny-ImageNet images. Images are not cherry-picked.</span>
@@ -745,8 +745,8 @@ attacks on Tiny-ImageNet and ImageNet.
 <!-- l. 57 --><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-random-subset-of-images-recovered-by-various-gradient-inversion-attacks-carried-out-using-the-gradients-from-vgg16-with-a-batch-of-256-imagenet-images-images-are-not-cherrypicked'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                 <img alt='PIC' height='516' src='figs/im1-.png' width='516' />                                               </div>
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/im2-.png' width='516' />                                               </div>
+<div class='centerline'>                                                 <img alt='PIC' height='216' src='figs/im1-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='217' src='figs/im2-.png' width='516' />                                               </div>
 <a id='x1-88r10'></a>
 <span class='ptmr7t-x-x-80'>Fig. 10.  Comparison  of  a  random  subset  of  images  recovered  by  various  gradient  inversion  attacks  carried  out  using  the  gradients  from  VGG-16  with  a
 batch of 256 ImageNet images. Images are not cherry-picked.</span>
@@ -758,8 +758,8 @@ batch of 256 ImageNet images. Images are not cherry-picked.</span>
 <!-- l. 66 --><p class='indent'>  </p><hr class='float' /><div class='float' id='comparison-of-a-random-subset-of-images-recovered-by-various-gradient-inversion-attacks-carried-out-using-the-gradients-from-vgg16-with-a-batch-of-256-imagenet-images-images-are-not-cherrypicked1'>
                                                                                                   
                                                                                                   
-<div class='centerline'>                                                 <img alt='PIC' height='516' src='figs/im3-.png' width='516' />                                               </div>
-<div class='centerline'>                                                <img alt='PIC' height='516' src='figs/im4-.png' width='516' />                                               </div>
+<div class='centerline'>                                                 <img alt='PIC' height='215' src='figs/im3-.png' width='516' />                                               </div>
+<div class='centerline'>                                                <img alt='PIC' height='218' src='figs/im4-.png' width='516' />                                               </div>
 <a id='x1-89r11'></a>
 <span class='ptmr7t-x-x-80'>Fig. 11.  Comparison  of  a  random  subset  of  images  recovered  by  various  gradient  inversion  attacks  carried  out  using  the  gradients  from  VGG-16  with  a
 batch of 256 ImageNet images. Images are not cherry-picked.</span>

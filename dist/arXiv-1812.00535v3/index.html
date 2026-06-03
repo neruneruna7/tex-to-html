@@ -58,7 +58,7 @@ learning.
                                                                                                   
                                                                                                   
                                                                                                   
-<!-- l. 67 --><p class='noindent' id='the-framework-of-federated-learning-the-server-sends-the-shared-model-to-each-client-which-trains-the-shared-model-locally-by-its-private-data-then-the-update-from-each-client-is-uploaded-to-the-server-where-those-updates-are-aggregatedaveraged-to-improve-the-shared-model-in-a-collaborative-manor'> <img alt='PIC' height='490' src='pic/federated_learning-.png' width='490' /> <a id='x1-5r1'></a>
+<!-- l. 67 --><p class='noindent' id='the-framework-of-federated-learning-the-server-sends-the-shared-model-to-each-client-which-trains-the-shared-model-locally-by-its-private-data-then-the-update-from-each-client-is-uploaded-to-the-server-where-those-updates-are-aggregatedaveraged-to-improve-the-shared-model-in-a-collaborative-manor'> <img alt='PIC' height='293' src='pic/federated_learning-.png' width='490' /> <a id='x1-5r1'></a>
 Fig. 1:  The  framework  of  federated  learning.  The  server  sends  the  shared  model  to  each  client,  which  trains  the  shared
 model  locally  by  its  private  data.  Then,  the  update  from  each  client  is  uploaded  to  the  server,  where  those  updates  are
 aggregated/averaged to improve the shared model in a collaborative manor.
@@ -209,7 +209,7 @@ samples.
 </p><!-- l. 170 --><p class='indent'>  </p><hr class='float' /><div class='float' id='illustration-of-the-proposed-mganaifrom-a-malicious-server-in-the-federated-learning-there-are-n-clients-and-the-vth-client-is-attacked-as-the-victim-the-shared-model-at-the-tth-iteration-is-denoted-as-mt-and-utk-denotes-corresponding-update-from-the-kth-client-on-the-malicious-server-a-discriminator-d-orange-and-generator-g-blue-are-trained-based-on-the-update-utv-from-the-victim-the-shared-model-mt-and-representatives-xk-xv-from-each-client-xaux-denotes-an-auxiliary-real-dataset-to-train-d-on-the-realfake-task'>
                                                                                                   
                                                                                                   
- <img alt='PIC' height='929' src='pic/framework-.png' width='928' /> <a id='x1-17r2'></a>
+ <img alt='PIC' height='656' src='pic/framework-.png' width='928' /> <a id='x1-17r2'></a>
 Fig. 2: Illustration of the proposed mGAN-AI from a malicious server in the federated learning. There are <span class='mathjax-inline'>\(N\)</span> clients, and the <span class='mathjax-inline'>\(v\)</span>th
 client is attacked as the victim. The shared model at the <span class='mathjax-inline'>\(t\)</span>th iteration is denoted as <span class='mathjax-inline'>\(M_t\)</span>, and <span class='mathjax-inline'>\(u_t^k\)</span> denotes corresponding update from
 the <span class='mathjax-inline'>\(k\)</span>th client. On the malicious server, a discriminator <span class='mathjax-inline'>\(D\)</span> (orange) and generator <span class='mathjax-inline'>\(G\)</span> (blue) are trained based on the update <span class='mathjax-inline'>\(u_t^v\)</span> from the
@@ -306,9 +306,9 @@ model.
                                                                                                   
                                                                                                   
 <div class='subfigure'>
-<div class='caption'><span class='id'>: </span><span class='content'></span></div><!-- l. 231 --><p class='noindent'> <img alt='PIC' height='247' src='./pic/GAN_uGAN-.png' width='247' /> <a id='x1-23r1'></a>
+<div class='caption'><span class='id'>: </span><span class='content'></span></div><!-- l. 231 --><p class='noindent'> <img alt='PIC' height='175' src='./pic/GAN_uGAN-.png' width='247' /> <a id='x1-23r1'></a>
 <span class='ptmr7t-x-x-90'>(a) GAN-based attack</span>                                                                          </p></div>  <div class='subfigure'>
-<div class='caption'><span class='id'>: </span><span class='content'></span></div><!-- l. 236 --><p class='noindent'> <img alt='PIC' height='247' src='./pic/GAN_mGAN-AI-.png' width='247' /> <a id='x1-24r2'></a>
+<div class='caption'><span class='id'>: </span><span class='content'></span></div><!-- l. 236 --><p class='noindent'> <img alt='PIC' height='175' src='./pic/GAN_mGAN-AI-.png' width='247' /> <a id='x1-24r2'></a>
 <span class='ptmr7t-x-x-90'>(b) mGAN-AI</span>                                                                                       </p></div>  <a id='x1-25r3'></a>
 Fig. 3: Structure comparison between the GAN-based attack (a) <span class='cite'> [<a href='#Xhitaj2017deep'>4</a>]</span> and the proposed mGAN-AI (b).
                                                                                                   
@@ -620,7 +620,7 @@ class.
                                                                                                   
                                                                                                   
                                                                                                   
-<!-- l. 463 --><p class='noindent' id='the-results-of-mganaion-the-mnist-dataset-the-first-two-rows-are-the-real-samples-from-the-other-clients-and-the-victim-the-next-two-rows-are-corresponding-representatives-calculated-from-other-xk-k-v-and-victim-xv-the-last-row-is-the-reconstructed-samples-by-mganai-which-are-similar-to-those-of-the-victim-presenting-larger-rotation-as-compared-to-those-of-the-other-clients'><span class='rotatebox' style='transform: rotate(-90deg);'>  <span class='ptmr7t-x-x-80'>Output    </span><span class='mathjax-inline'>\(X_v\)    \(X_k\) </span><span class='ptmr7t-x-x-80'>     Victim   Other</span> </span><img alt='PIC' height='490' src='pic/mnist-.png' width='490' /> <a id='x1-47r4'></a>
+<!-- l. 463 --><p class='noindent' id='the-results-of-mganaion-the-mnist-dataset-the-first-two-rows-are-the-real-samples-from-the-other-clients-and-the-victim-the-next-two-rows-are-corresponding-representatives-calculated-from-other-xk-k-v-and-victim-xv-the-last-row-is-the-reconstructed-samples-by-mganai-which-are-similar-to-those-of-the-victim-presenting-larger-rotation-as-compared-to-those-of-the-other-clients'><span class='rotatebox' style='transform: rotate(-90deg);'>  <span class='ptmr7t-x-x-80'>Output    </span><span class='mathjax-inline'>\(X_v\)    \(X_k\) </span><span class='ptmr7t-x-x-80'>     Victim   Other</span> </span><img alt='PIC' height='693' src='pic/mnist-.png' width='490' /> <a id='x1-47r4'></a>
 Fig. 4:  The  results  of  mGAN-AI on  the  MNIST  dataset.  The  first  two  rows  are  the  real  samples  from  the  other  clients  and
 the victim. The next two rows are corresponding representatives calculated from other (<span class='mathjax-inline'>\(X_k\)</span>, <span class='mathjax-inline'>\(k \ne v\)</span>) and victim (<span class='mathjax-inline'>\(X_v\)</span>). The last row is the
 reconstructed samples by mGAN-AI, which are similar to those of the victim, presenting larger rotation as compared to those
@@ -647,7 +647,7 @@ privacy.
                                                                                                   
                                                                                                   
                                                                                                   
-<!-- l. 488 --><p class='noindent' id='the-results-of-mganaion-the-att-dataset-the-top-two-rows-are-real-samples-from-the-victim-and-other-clients-respectively-the-corresponding-representatives-are-shown-in-the-next-two-rows-the-last-row-is-the-reconstructed-samples-which-show-that-mganaiwould-specifically-recover-clientdependent-property-ie-wearing-glasses'> <img alt='PIC' height='336' src='pic/att-.png' width='516' /> <a id='x1-49r5'></a>
+<!-- l. 488 --><p class='noindent' id='the-results-of-mganaion-the-att-dataset-the-top-two-rows-are-real-samples-from-the-victim-and-other-clients-respectively-the-corresponding-representatives-are-shown-in-the-next-two-rows-the-last-row-is-the-reconstructed-samples-which-show-that-mganaiwould-specifically-recover-clientdependent-property-ie-wearing-glasses'> <img alt='PIC' height='376' src='pic/att-.png' width='516' /> <a id='x1-49r5'></a>
 Fig. 5: The results of mGAN-AI on the AT&amp;T dataset. The top two rows are real samples from the victim and other clients,
 respectively.  The  corresponding  representatives  are  shown  in  the  next  two  rows.  The  last  row  is  the  reconstructed  samples,
 which show that mGAN-AI would specifically recover client-dependent property, i.e., wearing glasses.
@@ -678,7 +678,7 @@ mGAN-AI.
                                                                                                   
                                                                                                   
                                                                                                   
-<!-- l. 506 --><p class='noindent' id='comparison-of-reconstructed-samples-by-mganai-mi-attack-and-ganbased-attack-the-top-row-is-the-real-samples-and-the-rest-are-the-reconstructed-samples-by-the-passive-mganai-active-mganai-mi-attack-and-ganbased-attack-respectively'> <img alt='PIC' height='490' src='pic/compared-.png' width='490' /> <a id='x1-51r6'></a>
+<!-- l. 506 --><p class='noindent' id='comparison-of-reconstructed-samples-by-mganai-mi-attack-and-ganbased-attack-the-top-row-is-the-real-samples-and-the-rest-are-the-reconstructed-samples-by-the-passive-mganai-active-mganai-mi-attack-and-ganbased-attack-respectively'> <img alt='PIC' height='693' src='pic/compared-.png' width='490' /> <a id='x1-51r6'></a>
 Fig. 6: Comparison of reconstructed samples by mGAN-AI, MI attack, and GAN-based attack. The top row is the real samples,
 and  the  rest  are  the  reconstructed  samples  by  the  passive  mGAN-AI,  active  mGAN-AI,  MI  attack,  and  GAN-based  attack,
 respectively.
@@ -733,7 +733,7 @@ TABLE III: Quantitative Comparison on Inception Score
                                                                                                   
                                                                                                   
                                                                                                   
-<!-- l. 548 --><p class='noindent' id='the-accuracy-of-the-shared-model-at-each-iteration-in-the-federated-learning-when-mounting-different-attacks'> <img alt='PIC' height='490' src='pic/accuracy-.png' width='490' /> <a id='x1-54r7'></a>
+<!-- l. 548 --><p class='noindent' id='the-accuracy-of-the-shared-model-at-each-iteration-in-the-federated-learning-when-mounting-different-attacks'> <img alt='PIC' height='368' src='pic/accuracy-.png' width='490' /> <a id='x1-54r7'></a>
 Fig. 7: The accuracy of the shared model at each iteration in the federated learning when mounting different attacks.
                                                                                                   
                                                                                                   

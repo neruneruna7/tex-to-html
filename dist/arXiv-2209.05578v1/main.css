@@ -167,7 +167,7 @@ span.textso{letter-spacing: 0.3em; word-spacing: 0.3em}
 span.textul{text-decoration:underline}
 span.textst{text-decoration:line-through}
 span.textcaps{font-variant:small-caps}
- :root { color-scheme: light; } html, body { background: white; color: black; } 
+ :root { color-scheme: light; } html, body { background: white; color: black; } img:not(.math) { max-width: 95%; height: auto; } 
 tr#TBL-1-1- {border-top:0.112em solid #000;} 
 td#TBL-1-2-2{border-bottom:0.04199em solid #000}
 tr#TBL-1-3- {border-bottom:0.06999em solid #000}

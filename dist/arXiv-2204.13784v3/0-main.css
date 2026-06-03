@@ -244,7 +244,7 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline + .vspace:last-child{display:none;}
 div.array {text-align:center;}
 dt.printshorthands{float:left; clear:left; margin-right:1em;}
- :root { color-scheme: light; } html, body { background: white; color: black; } 
+ :root { color-scheme: light; } html, body { background: white; color: black; } img:not(.math) { max-width: 95%; height: auto; } 
 tr#TBL-1-1- {border-top:0.112em solid #000;} 
 tr#TBL-1-1- {border-bottom:0.06999em solid #000}
 tr#TBL-1-2- {border-bottom:0.06999em solid #000}

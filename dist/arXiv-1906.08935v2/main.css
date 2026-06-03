@@ -223,7 +223,7 @@ div.algorithm table.caption { border-bottom: 1px solid black; margin-bottom:1pt;
 dl.enumerate {display:grid; grid-template-columns: min-content 1fr; align-items: top; row-gap:0ch;}
 dd.enumerate {margin-left: 0;}
 dd.enumerate {margin-left:1ch;}
- :root { color-scheme: light; } html, body { background: white; color: black; } 
+ :root { color-scheme: light; } html, body { background: white; color: black; } img:not(.math) { max-width: 95%; height: auto; } 
 #TBL-2-5{border-right:1px solid #000;}
 #TBL-2-6{border-right:1px solid #000;}
 #TBL-3-1{border-right:1px solid #000;}

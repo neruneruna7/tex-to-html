@@ -209,7 +209,7 @@ table.multline, table.multline-star {width:100%;}
 td.gather {text-align:center; }
 table.gather {width:100%;}
 div.gather-star {text-align:center;}
- :root { color-scheme: light; } html, body { background: white; color: black; } 
+ :root { color-scheme: light; } html, body { background: white; color: black; } img:not(.math) { max-width: 95%; height: auto; } 
 tr#TBL-1-1- {border-top:0.112em solid #000;} 
 tr#TBL-1-3- {border-bottom:0.06999em solid #000}
 tr#TBL-1-4- {border-bottom:0.06999em solid #000}

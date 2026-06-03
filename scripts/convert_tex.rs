@@ -14,6 +14,7 @@ use std::{
     ffi::OsStr,
     fs,
     fs::File,
+    io::Read,
     path::{Path, PathBuf},
     process::{Command, Stdio},
 };
@@ -81,6 +82,7 @@ fn main() -> Result<()> {
     run_make4ht(&work_dir, &tex_file_rel, &output_dir_abs)?;
 
     normalize_single_html(&output_dir)?;
+    normalize_image_layout(&output_dir)?;
 
     cleanup_intermediate_files(&work_dir)?;
 
@@ -304,6 +306,10 @@ html, body {
   background: white;
   color: black;
 }
+img:not(.math) {
+  max-width: 95\%;
+  height: auto;
+}
 }
 
 \begin{document}
@@ -387,6 +393,302 @@ fn normalize_single_html(output_dir: &Path) -> Result<()> {
             );
         }
     }
+}
+
+fn normalize_image_layout(output_dir: &Path) -> Result<()> {
+    rewrite_img_dimensions(output_dir)?;
+
+    for entry in fs::read_dir(output_dir)
+        .with_context(|| format!("failed to read {}", output_dir.display()))?
+    {
+        let entry = entry?;
+        let path = entry.path();
+
+        if path.is_file() && path.extension() == Some(OsStr::new("css")) {
+            append_responsive_image_css(&path)?;
+        }
+    }
+
+    Ok(())
+}
+
+fn rewrite_img_dimensions(output_dir: &Path) -> Result<()> {
+    let index_path = output_dir.join("index.html");
+    let html = fs::read_to_string(&index_path)
+        .with_context(|| format!("failed to read {}", index_path.display()))?;
+
+    let mut output = String::with_capacity(html.len());
+    let mut rest = html.as_str();
+
+    while let Some(start) = rest.find("<img") {
+        output.push_str(&rest[..start]);
+        rest = &rest[start..];
+
+        let Some(end) = rest.find('>') else {
+            output.push_str(rest);
+            rest = "";
+            break;
+        };
+
+        let tag = &rest[..=end];
+        output.push_str(&rewrite_img_tag_dimensions(tag, output_dir)?);
+        rest = &rest[end + 1..];
+    }
+
+    output.push_str(rest);
+    fs::write(&index_path, output)
+        .with_context(|| format!("failed to write {}", index_path.display()))?;
+
+    Ok(())
+}
+
+fn rewrite_img_tag_dimensions(tag: &str, output_dir: &Path) -> Result<String> {
+    let Some(src) = attr_value(tag, "src") else {
+        return Ok(tag.to_string());
+    };
+
+    let Some(image_path) = image_src_path(output_dir, &src) else {
+        return Ok(tag.to_string());
+    };
+
+    let Some((natural_width, natural_height)) = image_dimensions(&image_path)? else {
+        return Ok(tag.to_string());
+    };
+
+    let display_width = attr_u32(tag, "width").unwrap_or(natural_width);
+    let display_height = ((display_width as f64) * (natural_height as f64) / (natural_width as f64))
+        .round()
+        .max(1.0) as u32;
+
+    let tag = set_attr_value(tag, "width", &display_width.to_string());
+    let tag = set_attr_value(&tag, "height", &display_height.to_string());
+
+    Ok(tag)
+}
+
+fn attr_value(tag: &str, name: &str) -> Option<String> {
+    let needle = format!("{name}=");
+    let start = tag.find(&needle)? + needle.len();
+    let quote = tag[start..].chars().next()?;
+
+    if quote != '\'' && quote != '"' {
+        return None;
+    }
+
+    let value_start = start + quote.len_utf8();
+    let value_end = tag[value_start..].find(quote)? + value_start;
+
+    Some(tag[value_start..value_end].to_string())
+}
+
+fn attr_u32(tag: &str, name: &str) -> Option<u32> {
+    attr_value(tag, name)?.parse().ok()
+}
+
+fn set_attr_value(tag: &str, name: &str, value: &str) -> String {
+    let needle = format!("{name}=");
+
+    if let Some(start) = tag.find(&needle) {
+        let quote_index = start + needle.len();
+        let Some(quote) = tag[quote_index..].chars().next() else {
+            return tag.to_string();
+        };
+
+        if quote != '\'' && quote != '"' {
+            return tag.to_string();
+        }
+
+        let value_start = quote_index + quote.len_utf8();
+        let Some(value_end_rel) = tag[value_start..].find(quote) else {
+            return tag.to_string();
+        };
+
+        let value_end = value_start + value_end_rel;
+        let mut rewritten = String::with_capacity(tag.len() + value.len());
+        rewritten.push_str(&tag[..value_start]);
+        rewritten.push_str(value);
+        rewritten.push_str(&tag[value_end..]);
+        return rewritten;
+    }
+
+    let Some(end) = tag.rfind('>') else {
+        return tag.to_string();
+    };
+
+    let mut rewritten = String::with_capacity(tag.len() + name.len() + value.len() + 4);
+    rewritten.push_str(&tag[..end]);
+    rewritten.push(' ');
+    rewritten.push_str(name);
+    rewritten.push_str("='");
+    rewritten.push_str(value);
+    rewritten.push('\'');
+    rewritten.push_str(&tag[end..]);
+    rewritten
+}
+
+fn image_src_path(output_dir: &Path, src: &str) -> Option<PathBuf> {
+    let src = src.split(['?', '#']).next().unwrap_or(src);
+
+    if src.starts_with("http://") || src.starts_with("https://") || src.starts_with("data:") {
+        return None;
+    }
+
+    let src = src.strip_prefix("./").unwrap_or(src);
+    let path = output_dir.join(src);
+
+    path.is_file().then_some(path)
+}
+
+fn image_dimensions(path: &Path) -> Result<Option<(u32, u32)>> {
+    match path
+        .extension()
+        .and_then(OsStr::to_str)
+        .map(str::to_ascii_lowercase)
+    {
+        Some(ext) if ext == "png" => png_dimensions(path),
+        Some(ext) if ext == "jpg" || ext == "jpeg" => jpeg_dimensions(path),
+        Some(ext) if ext == "svg" => svg_dimensions(path),
+        _ => Ok(None),
+    }
+}
+
+fn png_dimensions(path: &Path) -> Result<Option<(u32, u32)>> {
+    let mut header = [0u8; 24];
+    let bytes_read = File::open(path)
+        .with_context(|| format!("failed to open {}", path.display()))?
+        .read(&mut header)
+        .with_context(|| format!("failed to read PNG header from {}", path.display()))?;
+
+    if bytes_read < header.len() {
+        return Ok(None);
+    }
+
+    if &header[..8] != b"\x89PNG\r\n\x1a\n" {
+        return Ok(None);
+    }
+
+    let width = u32::from_be_bytes([header[16], header[17], header[18], header[19]]);
+    let height = u32::from_be_bytes([header[20], header[21], header[22], header[23]]);
+
+    Ok(Some((width, height)))
+}
+
+fn jpeg_dimensions(path: &Path) -> Result<Option<(u32, u32)>> {
+    let mut bytes = Vec::new();
+    File::open(path)
+        .with_context(|| format!("failed to open {}", path.display()))?
+        .read_to_end(&mut bytes)
+        .with_context(|| format!("failed to read {}", path.display()))?;
+
+    if bytes.len() < 4 || bytes[..2] != [0xff, 0xd8] {
+        return Ok(None);
+    }
+
+    let mut i = 2usize;
+
+    while i + 9 < bytes.len() {
+        if bytes[i] != 0xff {
+            i += 1;
+            continue;
+        }
+
+        while i < bytes.len() && bytes[i] == 0xff {
+            i += 1;
+        }
+
+        if i >= bytes.len() {
+            break;
+        }
+
+        let marker = bytes[i];
+        i += 1;
+
+        if marker == 0xd9 || marker == 0xda {
+            break;
+        }
+
+        if i + 2 > bytes.len() {
+            break;
+        }
+
+        let segment_len = u16::from_be_bytes([bytes[i], bytes[i + 1]]) as usize;
+
+        if segment_len < 2 || i + segment_len > bytes.len() {
+            break;
+        }
+
+        if matches!(
+            marker,
+            0xc0 | 0xc1
+                | 0xc2
+                | 0xc3
+                | 0xc5
+                | 0xc6
+                | 0xc7
+                | 0xc9
+                | 0xca
+                | 0xcb
+                | 0xcd
+                | 0xce
+                | 0xcf
+        ) {
+            let height = u16::from_be_bytes([bytes[i + 3], bytes[i + 4]]) as u32;
+            let width = u16::from_be_bytes([bytes[i + 5], bytes[i + 6]]) as u32;
+            return Ok(Some((width, height)));
+        }
+
+        i += segment_len;
+    }
+
+    Ok(None)
+}
+
+fn svg_dimensions(path: &Path) -> Result<Option<(u32, u32)>> {
+    let svg =
+        fs::read_to_string(path).with_context(|| format!("failed to read {}", path.display()))?;
+
+    if let (Some(width), Some(height)) = (
+        svg_number_attr(&svg, "width"),
+        svg_number_attr(&svg, "height"),
+    ) {
+        return Ok(Some((width.round() as u32, height.round() as u32)));
+    }
+
+    if let Some(view_box) = attr_value(&svg, "viewBox").or_else(|| attr_value(&svg, "viewbox")) {
+        let nums: Vec<f64> = view_box
+            .split(|c: char| c.is_ascii_whitespace() || c == ',')
+            .filter_map(|part| part.parse::<f64>().ok())
+            .collect();
+
+        if nums.len() == 4 {
+            return Ok(Some((nums[2].round() as u32, nums[3].round() as u32)));
+        }
+    }
+
+    Ok(None)
+}
+
+fn svg_number_attr(svg: &str, name: &str) -> Option<f64> {
+    let value = attr_value(svg, name)?;
+    let number: String = value
+        .chars()
+        .take_while(|c| c.is_ascii_digit() || *c == '.')
+        .collect();
+
+    number.parse().ok()
+}
+
+fn append_responsive_image_css(path: &Path) -> Result<()> {
+    let mut css =
+        fs::read_to_string(path).with_context(|| format!("failed to read {}", path.display()))?;
+    let rule = "\nimg:not(.math) { max-width: 95%; height: auto; }\n";
+
+    if !css.contains("img:not(.math) { max-width: 95%; height: auto; }") {
+        css.push_str(rule);
+        fs::write(path, css).with_context(|| format!("failed to write {}", path.display()))?;
+    }
+
+    Ok(())
 }
 
 fn cleanup_intermediate_files(work_dir: &Path) -> Result<()> {
