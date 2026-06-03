@@ -2,3 +2,4 @@
 [titles]
 "arXiv-1812.00535v3" = "Beyond Inferring Class Representatives: User-Level Privacy Leakage From Federated Learning"
 "arXiv-2209.05578v1" = "Cocktail Party Attack: Breaking Aggregation-Based Privacy in Federated Learning using Independent Component Analysis"
+"arXiv-2306.00127v1" = "Surrogate Model Extension (SME):A Fast and Accurate Weight Update Attack on Federated Learning"

@@ -67,6 +67,7 @@ git pushする.
 ## 対応しているTeX文書構造
 エントリポイントが次のもの．
 - main.tex
+- example_paper.tex
 - `<hoge>.tar.gz`のとき，`<hoge>.tex`があるときはそれをエントリポイントとする．
 
 ## 未確認事項

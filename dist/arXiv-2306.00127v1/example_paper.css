@@ -1,0 +1,691 @@
+ 
+/* start css.sty */
+.ptmr7t-{font-family: monospace,monospace;}
+.ptmr7t-{font-family: monospace,monospace;}
+.ptmb7t-{ font-weight: bold;}
+.ptmb7t-{ font-weight: bold;}
+.ptmb7t-{ font-weight: bold;}
+.ptmb7t-{ font-weight: bold;}
+.ptmb7t-x-x-120{font-size:120%; font-weight: bold;}
+.ptmb7t-x-x-120{ font-weight: bold;}
+.ptmb7t-x-x-120{ font-weight: bold;}
+.ptmb7t-x-x-120{ font-weight: bold;}
+.ptmbi7t-x-x-120{font-size:120%;  font-style: italic; font-weight: bold;}
+.ptmr7t-x-x-90{font-size:90%;font-family: monospace,monospace;}
+.ptmr7t-x-x-90{font-family: monospace,monospace;}
+.ptmb7t-x-x-90{font-size:90%; font-weight: bold;}
+.ptmb7t-x-x-90{ font-weight: bold;}
+.ptmb7t-x-x-90{ font-weight: bold;}
+.ptmb7t-x-x-90{ font-weight: bold;}
+.ptmb7t-x-x-144{font-size:144%; font-weight: bold;}
+.ptmb7t-x-x-144{ font-weight: bold;}
+.ptmb7t-x-x-144{ font-weight: bold;}
+.ptmb7t-x-x-144{ font-weight: bold;}
+.cmmi-9{font-size:90%;font-style: italic;}
+.ptmri7t-x-x-90{font-size:90%;font-style: italic;}
+.pcrr7t-{ font-family: 'Nimbus Mono L', monospace,monospace;}
+.pcrr7t-{ font-family: 'Nimbus Mono L', monospace,monospace;}
+.ptmri7t-{font-style: italic;}
+.pcrr7t-x-x-90{font-size:90%; font-family: 'Nimbus Mono L', monospace,monospace;}
+.pcrr7t-x-x-90{ font-family: 'Nimbus Mono L', monospace,monospace;}
+p{margin-top:0;margin-bottom:0}
+p.indent{text-indent:0;}
+p + p{margin-top:1em;}
+p + div, p + pre {margin-top:1em;}
+div + p, pre + p {margin-top:1em;}
+a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
+@media print {div.crosslinks {visibility:hidden;}}
+table.tabular{border-collapse: collapse; border-spacing: 0;}
+a img { border-top: 0; border-left: 0; border-right: 0; }
+center { margin-top:1em; margin-bottom:1em; }
+td center { margin-top:0em; margin-bottom:0em; }
+.Canvas { position:relative; }
+img.math{vertical-align:middle;}
+div.par-math-display, div.math-display{text-align:center;}
+body{ margin:1em auto; max-width:80ch; padding:0 .62em; }
+h1,h2,h3,h4,h5 { line-height:1.2; }
+@media print{ body{ max-width:none } }
+.partHead, .likepartHead { font-size: 2em; }
+.chapterHead, .likechapterHead { font-size: 1.7411em; }
+.sectionHead, .likesectionHead { font-size: 1.5157em; }
+.subsectionHead, .likesubsectionHead { font-size: 1.3195em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1.1487em; }
+ @media (prefers-color-scheme: dark) { img[src^="example_paper"]{filter: invert(1); } } 
+ body { background-color: Canvas; color: CanvasText; color-scheme: light dark; } 
+li p.indent { text-indent: 0em }
+li p:first-child{ margin-top:0em; }
+li p:last-child, li div:last-child { margin-bottom:0.5em; }
+li p:first-child{ margin-bottom:0; }
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+ul.itemize1,ol.enumerate1{padding-left: 0;}
+ul li.itemize,ol li.enumerate{margin-left: 1rem;}
+.enumerate1 {list-style-type:decimal;}
+.enumerate2 {list-style-type:lower-alpha;}
+.enumerate3 {list-style-type:lower-roman;}
+.enumerate4 {list-style-type:upper-alpha;}
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+div.newtheorem .head{font-weight: bold;}
+.obeylines-h,.obeylines-v {white-space: nowrap; }
+div.obeylines-v p { margin-top:0; margin-bottom:0; }
+.overline{ text-decoration:overline; }
+.overline img{ border-top: 1px solid black; }
+td.displaylines {text-align:center; white-space:nowrap;}
+.centerline {text-align:center;}
+.rightline {text-align:right;}
+pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.fbox {display:table}
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.minipage{width:100%;}
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+div.center div {text-align: left;}
+div.flushright, div.flushright div.flushright {text-align: right;}
+div.flushright div {text-align: left;}
+div.flushleft {text-align: left;}
+.underline{ text-decoration:underline; }
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+.framebox-c {text-align:center;}
+.framebox-l {text-align:left;}
+.framebox-r {text-align:right;}
+span.thank-mark{ vertical-align: super }
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+div.footnotes{border-top:solid 1px black; border-bottom:solid 1px black; padding-bottom:1ex; padding-top:0.5ex; margin-right:15%; margin-top:2ex; font-style:italic; font-size:85%;}
+div.footnotes p{margin-top:0; margin-bottom:0; text-indent:0;}
+code.verb{font-family:monospace,monospace;}
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 0px; margin:0px; }
+.hline td, .cline td{ padding: 0; }
+.hline hr, .cline hr{border:none;border-top:1px solid black;}
+.hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+.tabbing-right {text-align:right;}
+div.float, div.figure {margin-left: auto; margin-right: auto;}
+div.float img {text-align:center;}
+div.figure img {text-align:center;}
+.marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+.marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+.reversemarginpar{float:left;}
+table.equation {width:100%;}
+.equation td{text-align:center; }
+td.equation { margin-top:1em; margin-bottom:1em; } 
+td.equation-label { width:5%; text-align:center; }
+td.eqnarray4 { width:5%; white-space: normal; }
+td.eqnarray2 { width:5%; }
+table.eqnarray-star, table.eqnarray {width:100%;}
+div.eqnarray{text-align:center;}
+div.array {text-align:center;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.pmatrix img{vertical-align:middle;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.bar-css {text-decoration:overline;}
+img.cdots{vertical-align:middle;}
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 0px; margin:0px; }
+.hline td, .cline td{ padding: 0; }
+.hline hr, .cline hr{border:none;border-top:1px solid black;}
+.hline {border-top: 1px solid black;}
+.hline + .vspace:last-child{display:none;}
+div.array {text-align:center;}
+tr.hline td hr{display:none}
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.theindex-letter{ margin-top: 1em;}
+.index-subitem{ margin-left: 2ch;}
+.index-subsubitem{ margin-left: 4ch;}
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center; margin-top: 0.5rem;}
+div.caption span.id{font-weight: bold; white-space: nowrap; }
+h1.partHead{text-align: center}
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.subsubsectionHead, .likesubsubsectionHead { font-size: 1em; }
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+.verse{white-space:nowrap; margin-left:2em}
+div.maketitle {text-align:center;}
+h1.titleHead{text-align:center;}
+div.maketitle{ margin-bottom: 2em; }
+div.author, div.date {text-align:center;}
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+div.abstract p {margin-left:5%; margin-right:5%;}
+div.abstract {width:100%;}
+.abstracttitle{text-align:center;margin-bottom:1em;}
+.subsectionToc, .likesubsectionToc {margin-left:1em;}
+.subsubsectionToc, .likesubsubsectionToc {margin-left:2em;}
+.paragraphToc, .likeparagraphToc {margin-left:3em;}
+.subparagraphToc, .likesubparagraphToc {margin-left:4em;}
+figure.float, div.figure {margin-left: auto; margin-right: auto;}
+figure.figure {text-align:center;}
+figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
+figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
+p + figcaption, img + figcaption{margin-top: 1em;}
+.thebibliography dl { display: grid; grid-auto-columns: min-content 1fr; grid-auto-flow: column; }
+.thebibliography dt { grid-column: 1; margin-bottom: 0.5em; }
+.abstract{margin:1em;}
+.textls{letter-spacing:0.05rem;}
+.rotatebox{display: inline-block;}
+div.algorithm table.caption { border-bottom: 1px solid black; margin-bottom:1pt; }
+.ALCitem {width:2em; text-align:right;display:inline-block;font-size:0.8em;}
+.ALIndent{display:inline-block;}
+.equation td{text-align:center; }
+.equation-star td{text-align:center; }
+table.equation-star { width:100%; }
+table.equation { width:100%; }
+table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:95%; margin-left:5%; white-space: nowrap;}
+table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+td.align-label { width:5%; text-align:center; }
+td.align-odd { text-align:right; padding-right:0.3em;}
+td.align-even { text-align:left; padding-right:0.6em;}
+table.multline, table.multline-star {width:100%;}
+td.gather {text-align:center; }
+table.gather {width:100%;}
+div.gather-star {text-align:center;}
+ :root { color-scheme: light; } html, body { background: white; color: black; } 
+tr#TBL-1-1- {border-top:0.112em solid #000;} 
+tr#TBL-1-3- {border-bottom:0.06999em solid #000}
+tr#TBL-1-4- {border-bottom:0.06999em solid #000}
+tr#TBL-1-5- {border-bottom:0.112em solid #000}
+#TBL-2-10{border-right:1px solid #000;}
+tr#TBL-2-1- {border-top:0.112em solid #000;} 
+ #TBL-2-3-5{ background-color:#EDFFFF}
+ #TBL-2-3-6{ background-color:#FFEDFF}
+ #TBL-2-3-7{ background-color:#EDFFFF}
+ #TBL-2-3-8{ background-color:#FFEDFF}
+ #TBL-2-3-9{ background-color:#EDFFFF}
+ #TBL-2-3-10{ background-color:#FFEDFF}
+ #TBL-2-3-11{ background-color:#FFFFE0}
+tr#TBL-2-3- {border-bottom:0.06999em solid #000}
+ #TBL-2-4-5{ background-color:#EDFFFF}
+ #TBL-2-4-6{ background-color:#FFEDFF}
+ #TBL-2-4-7{ background-color:#EDFFFF}
+ #TBL-2-4-8{ background-color:#FFEDFF}
+ #TBL-2-4-9{ background-color:#EDFFFF}
+ #TBL-2-4-10{ background-color:#FFEDFF}
+ #TBL-2-4-11{ background-color:#FFFFE0}
+ #TBL-2-5-5{ background-color:#EDFFFF}
+ #TBL-2-5-6{ background-color:#FFEDFF}
+ #TBL-2-5-7{ background-color:#EDFFFF}
+ #TBL-2-5-8{ background-color:#FFEDFF}
+ #TBL-2-5-9{ background-color:#EDFFFF}
+ #TBL-2-5-10{ background-color:#FFEDFF}
+ #TBL-2-5-11{ background-color:#FFFFE0}
+ #TBL-2-6-5{ background-color:#EDFFFF}
+ #TBL-2-6-6{ background-color:#FFEDFF}
+ #TBL-2-6-7{ background-color:#EDFFFF}
+ #TBL-2-6-8{ background-color:#FFEDFF}
+ #TBL-2-6-9{ background-color:#EDFFFF}
+ #TBL-2-6-10{ background-color:#FFEDFF}
+ #TBL-2-6-11{ background-color:#FFFFE0}
+ #TBL-2-7-5{ background-color:#EDFFFF}
+ #TBL-2-7-6{ background-color:#FFEDFF}
+ #TBL-2-7-7{ background-color:#EDFFFF}
+ #TBL-2-7-8{ background-color:#FFEDFF}
+ #TBL-2-7-9{ background-color:#EDFFFF}
+ #TBL-2-7-10{ background-color:#FFEDFF}
+ #TBL-2-7-11{ background-color:#FFFFE0}
+ #TBL-2-8-5{ background-color:#EDFFFF}
+ #TBL-2-8-6{ background-color:#FFEDFF}
+ #TBL-2-8-7{ background-color:#EDFFFF}
+ #TBL-2-8-8{ background-color:#FFEDFF}
+ #TBL-2-8-9{ background-color:#EDFFFF}
+ #TBL-2-8-10{ background-color:#FFEDFF}
+ #TBL-2-8-11{ background-color:#FFFFE0}
+ #TBL-2-9-5{ background-color:#EDFFFF}
+ #TBL-2-9-6{ background-color:#FFEDFF}
+ #TBL-2-9-7{ background-color:#EDFFFF}
+ #TBL-2-9-8{ background-color:#FFEDFF}
+ #TBL-2-9-9{ background-color:#EDFFFF}
+ #TBL-2-9-10{ background-color:#FFEDFF}
+ #TBL-2-9-11{ background-color:#FFFFE0}
+tr#TBL-2-9- {border-bottom:0.06999em solid #000}
+ #TBL-2-10-5{ background-color:#EDFFFF}
+ #TBL-2-10-6{ background-color:#FFEDFF}
+ #TBL-2-10-7{ background-color:#EDFFFF}
+ #TBL-2-10-8{ background-color:#FFEDFF}
+ #TBL-2-10-9{ background-color:#EDFFFF}
+ #TBL-2-10-10{ background-color:#FFEDFF}
+ #TBL-2-10-11{ background-color:#FFFFE0}
+ #TBL-2-11-5{ background-color:#EDFFFF}
+ #TBL-2-11-6{ background-color:#FFEDFF}
+ #TBL-2-11-7{ background-color:#EDFFFF}
+ #TBL-2-11-8{ background-color:#FFEDFF}
+ #TBL-2-11-9{ background-color:#EDFFFF}
+ #TBL-2-11-10{ background-color:#FFEDFF}
+ #TBL-2-11-11{ background-color:#FFFFE0}
+ #TBL-2-12-5{ background-color:#EDFFFF}
+ #TBL-2-12-6{ background-color:#FFEDFF}
+ #TBL-2-12-7{ background-color:#EDFFFF}
+ #TBL-2-12-8{ background-color:#FFEDFF}
+ #TBL-2-12-9{ background-color:#EDFFFF}
+ #TBL-2-12-10{ background-color:#FFEDFF}
+ #TBL-2-12-11{ background-color:#FFFFE0}
+ #TBL-2-13-5{ background-color:#EDFFFF}
+ #TBL-2-13-6{ background-color:#FFEDFF}
+ #TBL-2-13-7{ background-color:#EDFFFF}
+ #TBL-2-13-8{ background-color:#FFEDFF}
+ #TBL-2-13-9{ background-color:#EDFFFF}
+ #TBL-2-13-10{ background-color:#FFEDFF}
+ #TBL-2-13-11{ background-color:#FFFFE0}
+ #TBL-2-14-5{ background-color:#EDFFFF}
+ #TBL-2-14-6{ background-color:#FFEDFF}
+ #TBL-2-14-7{ background-color:#EDFFFF}
+ #TBL-2-14-8{ background-color:#FFEDFF}
+ #TBL-2-14-9{ background-color:#EDFFFF}
+ #TBL-2-14-10{ background-color:#FFEDFF}
+ #TBL-2-14-11{ background-color:#FFFFE0}
+ #TBL-2-15-5{ background-color:#EDFFFF}
+ #TBL-2-15-6{ background-color:#FFEDFF}
+ #TBL-2-15-7{ background-color:#EDFFFF}
+ #TBL-2-15-8{ background-color:#FFEDFF}
+ #TBL-2-15-9{ background-color:#EDFFFF}
+ #TBL-2-15-10{ background-color:#FFEDFF}
+ #TBL-2-15-11{ background-color:#FFFFE0}
+tr#TBL-2-15- {border-bottom:0.112em solid #000}
+#TBL-3-9{border-right:1px solid #000;}
+tr#TBL-3-1- {border-top:0.112em solid #000;} 
+ #TBL-3-3-4{ background-color:#EDFFFF}
+ #TBL-3-3-5{ background-color:#FFEDFF}
+ #TBL-3-3-6{ background-color:#EDFFFF}
+ #TBL-3-3-7{ background-color:#FFEDFF}
+ #TBL-3-3-8{ background-color:#EDFFFF}
+ #TBL-3-3-9{ background-color:#FFEDFF}
+ #TBL-3-3-10{ background-color:#FFFFE0}
+ #TBL-3-3-11{ background-color:#FFFFE0}
+tr#TBL-3-3- {border-bottom:0.06999em solid #000}
+ #TBL-3-4-4{ background-color:#EDFFFF}
+ #TBL-3-4-5{ background-color:#FFEDFF}
+ #TBL-3-4-6{ background-color:#EDFFFF}
+ #TBL-3-4-7{ background-color:#FFEDFF}
+ #TBL-3-4-8{ background-color:#EDFFFF}
+ #TBL-3-4-9{ background-color:#FFEDFF}
+ #TBL-3-4-10{ background-color:#FFFFE0}
+ #TBL-3-4-11{ background-color:#FFFFE0}
+ #TBL-3-5-4{ background-color:#EDFFFF}
+ #TBL-3-5-5{ background-color:#FFEDFF}
+ #TBL-3-5-6{ background-color:#EDFFFF}
+ #TBL-3-5-7{ background-color:#FFEDFF}
+ #TBL-3-5-8{ background-color:#EDFFFF}
+ #TBL-3-5-9{ background-color:#FFEDFF}
+ #TBL-3-5-10{ background-color:#FFFFE0}
+ #TBL-3-5-11{ background-color:#FFFFE0}
+ #TBL-3-6-4{ background-color:#EDFFFF}
+ #TBL-3-6-5{ background-color:#FFEDFF}
+ #TBL-3-6-6{ background-color:#EDFFFF}
+ #TBL-3-6-7{ background-color:#FFEDFF}
+ #TBL-3-6-8{ background-color:#EDFFFF}
+ #TBL-3-6-9{ background-color:#FFEDFF}
+ #TBL-3-6-10{ background-color:#FFFFE0}
+ #TBL-3-6-11{ background-color:#FFFFE0}
+tr#TBL-3-6- {border-bottom:0.06999em solid #000}
+ #TBL-3-7-4{ background-color:#EDFFFF}
+ #TBL-3-7-5{ background-color:#FFEDFF}
+ #TBL-3-7-6{ background-color:#EDFFFF}
+ #TBL-3-7-7{ background-color:#FFEDFF}
+ #TBL-3-7-8{ background-color:#EDFFFF}
+ #TBL-3-7-9{ background-color:#FFEDFF}
+ #TBL-3-7-10{ background-color:#FFFFE0}
+ #TBL-3-7-11{ background-color:#FFFFE0}
+ #TBL-3-8-4{ background-color:#EDFFFF}
+ #TBL-3-8-5{ background-color:#FFEDFF}
+ #TBL-3-8-6{ background-color:#EDFFFF}
+ #TBL-3-8-7{ background-color:#FFEDFF}
+ #TBL-3-8-8{ background-color:#EDFFFF}
+ #TBL-3-8-9{ background-color:#FFEDFF}
+ #TBL-3-8-10{ background-color:#FFFFE0}
+ #TBL-3-8-11{ background-color:#FFFFE0}
+ #TBL-3-9-4{ background-color:#EDFFFF}
+ #TBL-3-9-5{ background-color:#FFEDFF}
+ #TBL-3-9-6{ background-color:#EDFFFF}
+ #TBL-3-9-7{ background-color:#FFEDFF}
+ #TBL-3-9-8{ background-color:#EDFFFF}
+ #TBL-3-9-9{ background-color:#FFEDFF}
+ #TBL-3-9-10{ background-color:#FFFFE0}
+ #TBL-3-9-11{ background-color:#FFFFE0}
+tr#TBL-3-9- {border-bottom:0.112em solid #000}
+tr#TBL-4-1- {border-top:0.112em solid #000;} 
+tr#TBL-4-3- {border-bottom:0.06999em solid #000}
+tr#TBL-4-4- {border-bottom:0.06999em solid #000}
+tr#TBL-4-5- {border-bottom:0.112em solid #000}
+tr#TBL-5-1- {border-top:0.112em solid #000;} 
+tr#TBL-5-3- {border-bottom:0.06999em solid #000}
+tr#TBL-5-4- {border-bottom:0.06999em solid #000}
+tr#TBL-5-5- {border-bottom:0.112em solid #000}
+#TBL-6-10{border-right:1px solid #000;}
+tr#TBL-6-1- {border-top:0.112em solid #000;} 
+ #TBL-6-3-5{ background-color:#EDFFFF}
+ #TBL-6-3-6{ background-color:#FFEDFF}
+ #TBL-6-3-7{ background-color:#EDFFFF}
+ #TBL-6-3-8{ background-color:#FFEDFF}
+ #TBL-6-3-9{ background-color:#EDFFFF}
+ #TBL-6-3-10{ background-color:#FFEDFF}
+ #TBL-6-3-11{ background-color:#FFFFE0}
+tr#TBL-6-3- {border-bottom:0.06999em solid #000}
+ #TBL-6-4-5{ background-color:#EDFFFF}
+ #TBL-6-4-6{ background-color:#FFEDFF}
+ #TBL-6-4-7{ background-color:#EDFFFF}
+ #TBL-6-4-8{ background-color:#FFEDFF}
+ #TBL-6-4-9{ background-color:#EDFFFF}
+ #TBL-6-4-10{ background-color:#FFEDFF}
+ #TBL-6-4-11{ background-color:#FFFFE0}
+ #TBL-6-5-5{ background-color:#EDFFFF}
+ #TBL-6-5-6{ background-color:#FFEDFF}
+ #TBL-6-5-7{ background-color:#EDFFFF}
+ #TBL-6-5-8{ background-color:#FFEDFF}
+ #TBL-6-5-9{ background-color:#EDFFFF}
+ #TBL-6-5-10{ background-color:#FFEDFF}
+ #TBL-6-5-11{ background-color:#FFFFE0}
+ #TBL-6-6-5{ background-color:#EDFFFF}
+ #TBL-6-6-6{ background-color:#FFEDFF}
+ #TBL-6-6-7{ background-color:#EDFFFF}
+ #TBL-6-6-8{ background-color:#FFEDFF}
+ #TBL-6-6-9{ background-color:#EDFFFF}
+ #TBL-6-6-10{ background-color:#FFEDFF}
+ #TBL-6-6-11{ background-color:#FFFFE0}
+ #TBL-6-7-5{ background-color:#EDFFFF}
+ #TBL-6-7-6{ background-color:#FFEDFF}
+ #TBL-6-7-7{ background-color:#EDFFFF}
+ #TBL-6-7-8{ background-color:#FFEDFF}
+ #TBL-6-7-9{ background-color:#EDFFFF}
+ #TBL-6-7-10{ background-color:#FFEDFF}
+ #TBL-6-7-11{ background-color:#FFFFE0}
+tr#TBL-6-7- {border-bottom:0.06999em solid #000}
+ #TBL-6-8-5{ background-color:#EDFFFF}
+ #TBL-6-8-6{ background-color:#FFEDFF}
+ #TBL-6-8-7{ background-color:#EDFFFF}
+ #TBL-6-8-8{ background-color:#FFEDFF}
+ #TBL-6-8-9{ background-color:#EDFFFF}
+ #TBL-6-8-10{ background-color:#FFEDFF}
+ #TBL-6-8-11{ background-color:#FFFFE0}
+ #TBL-6-9-5{ background-color:#EDFFFF}
+ #TBL-6-9-6{ background-color:#FFEDFF}
+ #TBL-6-9-7{ background-color:#EDFFFF}
+ #TBL-6-9-8{ background-color:#FFEDFF}
+ #TBL-6-9-9{ background-color:#EDFFFF}
+ #TBL-6-9-10{ background-color:#FFEDFF}
+ #TBL-6-9-11{ background-color:#FFFFE0}
+ #TBL-6-10-5{ background-color:#EDFFFF}
+ #TBL-6-10-6{ background-color:#FFEDFF}
+ #TBL-6-10-7{ background-color:#EDFFFF}
+ #TBL-6-10-8{ background-color:#FFEDFF}
+ #TBL-6-10-9{ background-color:#EDFFFF}
+ #TBL-6-10-10{ background-color:#FFEDFF}
+ #TBL-6-10-11{ background-color:#FFFFE0}
+ #TBL-6-11-5{ background-color:#EDFFFF}
+ #TBL-6-11-6{ background-color:#FFEDFF}
+ #TBL-6-11-7{ background-color:#EDFFFF}
+ #TBL-6-11-8{ background-color:#FFEDFF}
+ #TBL-6-11-9{ background-color:#EDFFFF}
+ #TBL-6-11-10{ background-color:#FFEDFF}
+ #TBL-6-11-11{ background-color:#FFFFE0}
+tr#TBL-6-11- {border-bottom:0.06999em solid #000}
+ #TBL-6-12-5{ background-color:#EDFFFF}
+ #TBL-6-12-6{ background-color:#FFEDFF}
+ #TBL-6-12-7{ background-color:#EDFFFF}
+ #TBL-6-12-8{ background-color:#FFEDFF}
+ #TBL-6-12-9{ background-color:#EDFFFF}
+ #TBL-6-12-10{ background-color:#FFEDFF}
+ #TBL-6-12-11{ background-color:#FFFFE0}
+ #TBL-6-13-5{ background-color:#EDFFFF}
+ #TBL-6-13-6{ background-color:#FFEDFF}
+ #TBL-6-13-7{ background-color:#EDFFFF}
+ #TBL-6-13-8{ background-color:#FFEDFF}
+ #TBL-6-13-9{ background-color:#EDFFFF}
+ #TBL-6-13-10{ background-color:#FFEDFF}
+ #TBL-6-13-11{ background-color:#FFFFE0}
+ #TBL-6-14-5{ background-color:#EDFFFF}
+ #TBL-6-14-6{ background-color:#FFEDFF}
+ #TBL-6-14-7{ background-color:#EDFFFF}
+ #TBL-6-14-8{ background-color:#FFEDFF}
+ #TBL-6-14-9{ background-color:#EDFFFF}
+ #TBL-6-14-10{ background-color:#FFEDFF}
+ #TBL-6-14-11{ background-color:#FFFFE0}
+ #TBL-6-15-5{ background-color:#EDFFFF}
+ #TBL-6-15-6{ background-color:#FFEDFF}
+ #TBL-6-15-7{ background-color:#EDFFFF}
+ #TBL-6-15-8{ background-color:#FFEDFF}
+ #TBL-6-15-9{ background-color:#EDFFFF}
+ #TBL-6-15-10{ background-color:#FFEDFF}
+ #TBL-6-15-11{ background-color:#FFFFE0}
+tr#TBL-6-15- {border-bottom:0.06999em solid #000}
+ #TBL-6-16-5{ background-color:#EDFFFF}
+ #TBL-6-16-6{ background-color:#FFEDFF}
+ #TBL-6-16-7{ background-color:#EDFFFF}
+ #TBL-6-16-8{ background-color:#FFEDFF}
+ #TBL-6-16-9{ background-color:#EDFFFF}
+ #TBL-6-16-10{ background-color:#FFEDFF}
+ #TBL-6-16-11{ background-color:#FFFFE0}
+ #TBL-6-17-5{ background-color:#EDFFFF}
+ #TBL-6-17-6{ background-color:#FFEDFF}
+ #TBL-6-17-7{ background-color:#EDFFFF}
+ #TBL-6-17-8{ background-color:#FFEDFF}
+ #TBL-6-17-9{ background-color:#EDFFFF}
+ #TBL-6-17-10{ background-color:#FFEDFF}
+ #TBL-6-17-11{ background-color:#FFFFE0}
+ #TBL-6-18-5{ background-color:#EDFFFF}
+ #TBL-6-18-6{ background-color:#FFEDFF}
+ #TBL-6-18-7{ background-color:#EDFFFF}
+ #TBL-6-18-8{ background-color:#FFEDFF}
+ #TBL-6-18-9{ background-color:#EDFFFF}
+ #TBL-6-18-10{ background-color:#FFEDFF}
+ #TBL-6-18-11{ background-color:#FFFFE0}
+ #TBL-6-19-5{ background-color:#EDFFFF}
+ #TBL-6-19-6{ background-color:#FFEDFF}
+ #TBL-6-19-7{ background-color:#EDFFFF}
+ #TBL-6-19-8{ background-color:#FFEDFF}
+ #TBL-6-19-9{ background-color:#EDFFFF}
+ #TBL-6-19-10{ background-color:#FFEDFF}
+ #TBL-6-19-11{ background-color:#FFFFE0}
+tr#TBL-6-19- {border-bottom:0.112em solid #000}
+#TBL-7-10{border-right:1px solid #000;}
+tr#TBL-7-1- {border-top:0.112em solid #000;} 
+ #TBL-7-3-5{ background-color:#EDFFFF}
+ #TBL-7-3-6{ background-color:#FFEDFF}
+ #TBL-7-3-7{ background-color:#EDFFFF}
+ #TBL-7-3-8{ background-color:#FFEDFF}
+ #TBL-7-3-9{ background-color:#EDFFFF}
+ #TBL-7-3-10{ background-color:#FFEDFF}
+ #TBL-7-3-11{ background-color:#FFFFE0}
+tr#TBL-7-3- {border-bottom:0.06999em solid #000}
+ #TBL-7-4-5{ background-color:#EDFFFF}
+ #TBL-7-4-6{ background-color:#FFEDFF}
+ #TBL-7-4-7{ background-color:#EDFFFF}
+ #TBL-7-4-8{ background-color:#FFEDFF}
+ #TBL-7-4-9{ background-color:#EDFFFF}
+ #TBL-7-4-10{ background-color:#FFEDFF}
+ #TBL-7-4-11{ background-color:#FFFFE0}
+ #TBL-7-5-5{ background-color:#EDFFFF}
+ #TBL-7-5-6{ background-color:#FFEDFF}
+ #TBL-7-5-7{ background-color:#EDFFFF}
+ #TBL-7-5-8{ background-color:#FFEDFF}
+ #TBL-7-5-9{ background-color:#EDFFFF}
+ #TBL-7-5-10{ background-color:#FFEDFF}
+ #TBL-7-5-11{ background-color:#FFFFE0}
+ #TBL-7-6-5{ background-color:#EDFFFF}
+ #TBL-7-6-6{ background-color:#FFEDFF}
+ #TBL-7-6-7{ background-color:#EDFFFF}
+ #TBL-7-6-8{ background-color:#FFEDFF}
+ #TBL-7-6-9{ background-color:#EDFFFF}
+ #TBL-7-6-10{ background-color:#FFEDFF}
+ #TBL-7-6-11{ background-color:#FFFFE0}
+ #TBL-7-7-5{ background-color:#EDFFFF}
+ #TBL-7-7-6{ background-color:#FFEDFF}
+ #TBL-7-7-7{ background-color:#EDFFFF}
+ #TBL-7-7-8{ background-color:#FFEDFF}
+ #TBL-7-7-9{ background-color:#EDFFFF}
+ #TBL-7-7-10{ background-color:#FFEDFF}
+ #TBL-7-7-11{ background-color:#FFFFE0}
+ #TBL-7-8-5{ background-color:#EDFFFF}
+ #TBL-7-8-6{ background-color:#FFEDFF}
+ #TBL-7-8-7{ background-color:#EDFFFF}
+ #TBL-7-8-8{ background-color:#FFEDFF}
+ #TBL-7-8-9{ background-color:#EDFFFF}
+ #TBL-7-8-10{ background-color:#FFEDFF}
+ #TBL-7-8-11{ background-color:#FFFFE0}
+ #TBL-7-9-5{ background-color:#EDFFFF}
+ #TBL-7-9-6{ background-color:#FFEDFF}
+ #TBL-7-9-7{ background-color:#EDFFFF}
+ #TBL-7-9-8{ background-color:#FFEDFF}
+ #TBL-7-9-9{ background-color:#EDFFFF}
+ #TBL-7-9-10{ background-color:#FFEDFF}
+ #TBL-7-9-11{ background-color:#FFFFE0}
+tr#TBL-7-9- {border-bottom:0.06999em solid #000}
+ #TBL-7-10-5{ background-color:#EDFFFF}
+ #TBL-7-10-6{ background-color:#FFEDFF}
+ #TBL-7-10-7{ background-color:#EDFFFF}
+ #TBL-7-10-8{ background-color:#FFEDFF}
+ #TBL-7-10-9{ background-color:#EDFFFF}
+ #TBL-7-10-10{ background-color:#FFEDFF}
+ #TBL-7-10-11{ background-color:#FFFFE0}
+ #TBL-7-11-5{ background-color:#EDFFFF}
+ #TBL-7-11-6{ background-color:#FFEDFF}
+ #TBL-7-11-7{ background-color:#EDFFFF}
+ #TBL-7-11-8{ background-color:#FFEDFF}
+ #TBL-7-11-9{ background-color:#EDFFFF}
+ #TBL-7-11-10{ background-color:#FFEDFF}
+ #TBL-7-11-11{ background-color:#FFFFE0}
+ #TBL-7-12-5{ background-color:#EDFFFF}
+ #TBL-7-12-6{ background-color:#FFEDFF}
+ #TBL-7-12-7{ background-color:#EDFFFF}
+ #TBL-7-12-8{ background-color:#FFEDFF}
+ #TBL-7-12-9{ background-color:#EDFFFF}
+ #TBL-7-12-10{ background-color:#FFEDFF}
+ #TBL-7-12-11{ background-color:#FFFFE0}
+ #TBL-7-13-5{ background-color:#EDFFFF}
+ #TBL-7-13-6{ background-color:#FFEDFF}
+ #TBL-7-13-7{ background-color:#EDFFFF}
+ #TBL-7-13-8{ background-color:#FFEDFF}
+ #TBL-7-13-9{ background-color:#EDFFFF}
+ #TBL-7-13-10{ background-color:#FFEDFF}
+ #TBL-7-13-11{ background-color:#FFFFE0}
+ #TBL-7-14-5{ background-color:#EDFFFF}
+ #TBL-7-14-6{ background-color:#FFEDFF}
+ #TBL-7-14-7{ background-color:#EDFFFF}
+ #TBL-7-14-8{ background-color:#FFEDFF}
+ #TBL-7-14-9{ background-color:#EDFFFF}
+ #TBL-7-14-10{ background-color:#FFEDFF}
+ #TBL-7-14-11{ background-color:#FFFFE0}
+ #TBL-7-15-5{ background-color:#EDFFFF}
+ #TBL-7-15-6{ background-color:#FFEDFF}
+ #TBL-7-15-7{ background-color:#EDFFFF}
+ #TBL-7-15-8{ background-color:#FFEDFF}
+ #TBL-7-15-9{ background-color:#EDFFFF}
+ #TBL-7-15-10{ background-color:#FFEDFF}
+ #TBL-7-15-11{ background-color:#FFFFE0}
+tr#TBL-7-15- {border-bottom:0.06999em solid #000}
+ #TBL-7-16-5{ background-color:#EDFFFF}
+ #TBL-7-16-6{ background-color:#FFEDFF}
+ #TBL-7-16-7{ background-color:#EDFFFF}
+ #TBL-7-16-8{ background-color:#FFEDFF}
+ #TBL-7-16-9{ background-color:#EDFFFF}
+ #TBL-7-16-10{ background-color:#FFEDFF}
+ #TBL-7-16-11{ background-color:#FFFFE0}
+ #TBL-7-17-5{ background-color:#EDFFFF}
+ #TBL-7-17-6{ background-color:#FFEDFF}
+ #TBL-7-17-7{ background-color:#EDFFFF}
+ #TBL-7-17-8{ background-color:#FFEDFF}
+ #TBL-7-17-9{ background-color:#EDFFFF}
+ #TBL-7-17-10{ background-color:#FFEDFF}
+ #TBL-7-17-11{ background-color:#FFFFE0}
+ #TBL-7-18-5{ background-color:#EDFFFF}
+ #TBL-7-18-6{ background-color:#FFEDFF}
+ #TBL-7-18-7{ background-color:#EDFFFF}
+ #TBL-7-18-8{ background-color:#FFEDFF}
+ #TBL-7-18-9{ background-color:#EDFFFF}
+ #TBL-7-18-10{ background-color:#FFEDFF}
+ #TBL-7-18-11{ background-color:#FFFFE0}
+ #TBL-7-19-5{ background-color:#EDFFFF}
+ #TBL-7-19-6{ background-color:#FFEDFF}
+ #TBL-7-19-7{ background-color:#EDFFFF}
+ #TBL-7-19-8{ background-color:#FFEDFF}
+ #TBL-7-19-9{ background-color:#EDFFFF}
+ #TBL-7-19-10{ background-color:#FFEDFF}
+ #TBL-7-19-11{ background-color:#FFFFE0}
+ #TBL-7-20-5{ background-color:#EDFFFF}
+ #TBL-7-20-6{ background-color:#FFEDFF}
+ #TBL-7-20-7{ background-color:#EDFFFF}
+ #TBL-7-20-8{ background-color:#FFEDFF}
+ #TBL-7-20-9{ background-color:#EDFFFF}
+ #TBL-7-20-10{ background-color:#FFEDFF}
+ #TBL-7-20-11{ background-color:#FFFFE0}
+ #TBL-7-21-5{ background-color:#EDFFFF}
+ #TBL-7-21-6{ background-color:#FFEDFF}
+ #TBL-7-21-7{ background-color:#EDFFFF}
+ #TBL-7-21-8{ background-color:#FFEDFF}
+ #TBL-7-21-9{ background-color:#EDFFFF}
+ #TBL-7-21-10{ background-color:#FFEDFF}
+ #TBL-7-21-11{ background-color:#FFFFE0}
+tr#TBL-7-21- {border-bottom:0.06999em solid #000}
+ #TBL-7-22-5{ background-color:#EDFFFF}
+ #TBL-7-22-6{ background-color:#FFEDFF}
+ #TBL-7-22-7{ background-color:#EDFFFF}
+ #TBL-7-22-8{ background-color:#FFEDFF}
+ #TBL-7-22-9{ background-color:#EDFFFF}
+ #TBL-7-22-10{ background-color:#FFEDFF}
+ #TBL-7-22-11{ background-color:#FFFFE0}
+ #TBL-7-23-5{ background-color:#EDFFFF}
+ #TBL-7-23-6{ background-color:#FFEDFF}
+ #TBL-7-23-7{ background-color:#EDFFFF}
+ #TBL-7-23-8{ background-color:#FFEDFF}
+ #TBL-7-23-9{ background-color:#EDFFFF}
+ #TBL-7-23-10{ background-color:#FFEDFF}
+ #TBL-7-23-11{ background-color:#FFFFE0}
+ #TBL-7-24-5{ background-color:#EDFFFF}
+ #TBL-7-24-6{ background-color:#FFEDFF}
+ #TBL-7-24-7{ background-color:#EDFFFF}
+ #TBL-7-24-8{ background-color:#FFEDFF}
+ #TBL-7-24-9{ background-color:#EDFFFF}
+ #TBL-7-24-10{ background-color:#FFEDFF}
+ #TBL-7-24-11{ background-color:#FFFFE0}
+ #TBL-7-25-5{ background-color:#EDFFFF}
+ #TBL-7-25-6{ background-color:#FFEDFF}
+ #TBL-7-25-7{ background-color:#EDFFFF}
+ #TBL-7-25-8{ background-color:#FFEDFF}
+ #TBL-7-25-9{ background-color:#EDFFFF}
+ #TBL-7-25-10{ background-color:#FFEDFF}
+ #TBL-7-25-11{ background-color:#FFFFE0}
+ #TBL-7-26-5{ background-color:#EDFFFF}
+ #TBL-7-26-6{ background-color:#FFEDFF}
+ #TBL-7-26-7{ background-color:#EDFFFF}
+ #TBL-7-26-8{ background-color:#FFEDFF}
+ #TBL-7-26-9{ background-color:#EDFFFF}
+ #TBL-7-26-10{ background-color:#FFEDFF}
+ #TBL-7-26-11{ background-color:#FFFFE0}
+ #TBL-7-27-5{ background-color:#EDFFFF}
+ #TBL-7-27-6{ background-color:#FFEDFF}
+ #TBL-7-27-7{ background-color:#EDFFFF}
+ #TBL-7-27-8{ background-color:#FFEDFF}
+ #TBL-7-27-9{ background-color:#EDFFFF}
+ #TBL-7-27-10{ background-color:#FFEDFF}
+ #TBL-7-27-11{ background-color:#FFFFE0}
+tr#TBL-7-27- {border-bottom:0.112em solid #000}
+/* end css.sty */
+

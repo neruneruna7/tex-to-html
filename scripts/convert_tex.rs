@@ -200,6 +200,7 @@ fn find_main_tex_file(work_dir: &Path) -> Result<PathBuf> {
     let conventional_names = [
         "main.tex",
         "0-main.tex",
+        "example_paper.tex",
         "paper.tex",
         "article.tex",
         "manuscript.tex",
